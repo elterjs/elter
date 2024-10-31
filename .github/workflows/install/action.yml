@@ -1,0 +1,20 @@
+name: Install and Build
+description: Installs dependencies and builds the project
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        npm install -g pnpm
+        pnpm install
+
+    - name: Build dist
+      shell: bash
+      run: npm run build

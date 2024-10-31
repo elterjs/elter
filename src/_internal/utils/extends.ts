@@ -1,0 +1,31 @@
+const classes = [
+  'active',
+  'hover',
+  'link',
+  'visited',
+  'empty',
+  'firstChild',
+  'lastChild',
+  'firstOfType',
+  'lastOfType',
+  'onlyOfType',
+  'onlyChild',
+  'checked',
+  'disabled',
+  'enabled',
+  'focus',
+  'inRange',
+  'invalid',
+  'valid',
+  'optional',
+  'outOfRange',
+  'readOnly',
+  'readWrite',
+  'required',
+  'target',
+];
+const elements = ['after', 'before', 'firstLetter', 'firstLine', 'marker', 'selection'];
+export const pseudo = {
+  classes,
+  elements,
+};

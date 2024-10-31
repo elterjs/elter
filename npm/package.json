@@ -1,0 +1,31 @@
+{
+  "name": "elter",
+  "version": "1.0.0",
+  "description": "CSS-in-JS library for stably building user interfaces",
+  "keywords": [
+    "elter",
+    "react",
+    "css",
+    "css-in-js",
+    "styling"
+  ],
+  "author": "Refirst",
+  "repository": "github:elterjs/elter",
+  "homepage": "https://elter.vercel.app",
+  "license": "MIT",
+  "main": "dist/core/index.js",
+  "typings": "dist/core/index.d.ts",
+  "bin": {
+    "elter": "./bin/elter.mjs"
+  },
+  "dependencies": {
+    "globby": "^14.0.2",
+    "tsx": "^4.19.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/react": "^18.3.3",
+    "@types/node": "^22.5.4",
+    "@types/css-modules": "^1.0.5"
+  }
+}
