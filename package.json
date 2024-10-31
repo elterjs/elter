@@ -1,6 +1,6 @@
 {
   "name": "elter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CSS-in-JS library for stably building user interfaces",
   "keywords": [
     "elter",
