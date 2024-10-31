@@ -89,10 +89,14 @@ type PseudoKeys =
 type PseudoKeysType = {
   [K in PseudoKeys]?: CustomCSSProperties;
 };
+type AndString = `&${string}`;
+type AndStringType = {
+  [key in AndString]: CustomCSSProperties;
+};
 
-export type CustomCSSProperties = CustomExtendProperties | CSSVariableProperties | PseudoKeysType | MediaQueryType;
+export type CustomCSSProperties = CustomExtendProperties | AndStringType | CSSVariableProperties | PseudoKeysType | MediaQueryType;
 export type ExCSSProperties =
   | CustomCSSProperties
   | {
-      [K in PseudoKeys | MediaQuery]?: CustomCSSProperties;
+      [K in AndString | PseudoKeys | MediaQuery]?: CustomCSSProperties;
     };
