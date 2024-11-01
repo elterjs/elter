@@ -30,14 +30,14 @@ interface CustomExtendProperties extends BaseCSSProperties {
   paddingRight?: CSSNumericValue;
   paddingTop?: CSSNumericValue;
   fontSize?: CSSNumericValue | CSSFontSizeSubValue;
-  scale?: CSSNumericValue | number | 'none';
-  opacity?: CSSNumericValue | number;
-  lineHeight?: CSSNumericValue | number | 'normal';
+  scale?: CSSNumericValue | 'none';
+  opacity?: CSSNumericValue;
+  lineHeight?: CSSNumericValue | 'normal';
   letterSpacing?: CSSNumericValue | 'normal';
   wordSpacing?: CSSNumericValue | 'normal';
   borderWidth?: CSSNumericValue | 'thin' | 'medium' | 'thick';
   borderRadius?: CSSRadiusValues | number;
-  top?: CSSNumericValue | 'auto' | number;
+  top?: CSSNumericValue | 'auto';
   right?: CSSNumericValue | 'auto';
   bottom?: CSSNumericValue | 'auto';
   left?: CSSNumericValue | 'auto';
