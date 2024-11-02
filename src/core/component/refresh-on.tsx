@@ -9,6 +9,11 @@ export const RefreshOn = () => {
 
   useEffect(() => {
     router.refresh();
+    const handleSave = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        router.refresh();
+      }
+    };
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const targetAnchor = target.closest('a');
@@ -18,9 +23,11 @@ export const RefreshOn = () => {
     };
 
     document.addEventListener('click', handleClick);
+    window.addEventListener('keydown', handleSave);
 
     return () => {
       document.removeEventListener('click', handleClick);
+      window.removeEventListener('keydown', handleSave);
     };
   }, [router, pathname]);
 
