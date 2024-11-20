@@ -3,10 +3,10 @@
   "version": "1.0.5",
   "description": "CSS-in-JS library for stably building user interfaces",
   "keywords": [
-    "elter",
-    "react",
     "css",
     "css-in-js",
+    "elter",
+    "react",
     "styling"
   ],
   "private": true,
