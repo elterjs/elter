@@ -20,10 +20,6 @@ export const isClassesObjectType = (object: object): object is MediaStyle => {
   return typeof object === 'object' && !Array.isArray(object);
 };
 
-export const toPascalCase = (str: string) => {
-  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-};
-
 export const camelToKebabCase = (property: string) => {
   return property.replace(/([A-Z])/g, '-$1').toLowerCase();
 };
