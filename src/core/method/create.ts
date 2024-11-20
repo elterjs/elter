@@ -6,10 +6,10 @@ import styles from '../styles/style.module.css';
 export function create<T extends MediaStyle>(object: CreateStyle<T> | MediaStyle): ReturnStyleType<T> {
   const base36Hash = genBase36Hash(object, 6);
   const { styleSheet } = sheetCompiler(object, base36Hash);
+  const injectCSS = isServer ? injectServerCSS : injectClientCSS;
   if (typeof globalStyleSheetPromise === 'undefined') createGlobalStyleSheetPromise();
   resolveGlobalStyleSheet(styleSheet);
 
-  const injectCSS = isServer ? injectServerCSS : injectClientCSS;
   Object.keys(object).forEach(key => {
     Object.defineProperty(object, key, {
       get: () => {

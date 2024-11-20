@@ -6,10 +6,10 @@ import styles from '../styles/style.module.css';
 export function style(object: ExCSSProperties): string {
   const base36Hash = genBase36Hash(object, 8);
   const { styleSheet } = styleCompiler(object, base36Hash);
+  const injectCSS = isServer ? injectServerCSS : injectClientCSS;
   if (typeof globalStyleSheetPromise === 'undefined') createGlobalStyleSheetPromise();
   resolveGlobalStyleSheet(styleSheet);
 
-  const injectCSS = isServer ? injectServerCSS : injectClientCSS;
   if (isDevAndTest) injectCSS(base36Hash, styleSheet);
   return isDevAndTest ? base36Hash : styles[base36Hash];
 }
